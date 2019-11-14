@@ -1,0 +1,126 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    table {
+        table-layout: auto;
+        height: 80%;
+        width: auto;
+        overflow-x: scroll;
+        thead tr {
+            display: block;
+            width: 100%;
+        }
+        tbody {
+            display: block;
+            overflow: auto;
+            height: 90%;
+            width: 100%;
+        }
+        // NV
+        th:nth-child(1),
+        td:nth-child(1) {
+            width: 80px; // calc(100%/20);
+        }
+        // Fecha
+        th:nth-child(2),
+        td:nth-child(2) {
+            width: 100px; // calc(100%/20*2);
+        }
+        // Cliente
+        th:nth-child(3),
+        td:nth-child(3) {
+            width: 310px; // calc(100%/20*6);
+        }
+        // Codigo
+        th:nth-child(4),
+        td:nth-child(4) {
+            width: 130px; // calc(100%/20*3);
+        }
+        // Cantidad
+        th:nth-child(5),
+        td:nth-child(5) {
+            width: 90px; // calc(100%/20);
+            text-align: right;
+        }
+        // Cantidad
+        th:nth-child(6),
+        td:nth-child(6) {
+            width: 90px; // calc(100%/20);
+            text-align: right;
+        }
+        // unidad
+        th:nth-child(7),
+        td:nth-child(7) {
+            width: 55px; // calc(100%/20*3);
+        }
+        // largo/ancho
+        th:nth-child(8),
+        td:nth-child(8) {
+            width: 70px; // calc(100%/20*3);
+            text-align: right;
+        }
+        // espesor
+        th:nth-child(9),
+        td:nth-child(9) {
+            width: 55px; // calc(100%/20*3);
+            text-align: right;
+        }
+        // kilos
+        th:nth-child(10),
+        td:nth-child(10) {
+            width: 95px; // calc(100%/20*3);
+            text-align: right;
+        }
+        // plancha o despunte
+        th:nth-child(11),
+        td:nth-child(11) {
+            width: 90px; // calc(100%/20*3);
+        }
+        // matriceria
+        th:nth-child(12),
+        td:nth-child(12) {
+            width: 160px; // calc(100%/20*3);
+        }
+        // Guillotina
+        th:nth-child(13),
+        td:nth-child(13) {
+            width: 160px; // calc(100%/20*3);
+        }
+        // edicion
+        th:nth-child(14),
+        td:nth-child(14) {
+            width: 75px; // calc(100%/20*3);
+        }
+        // // plasma
+        // th:nth-child(14),
+        // td:nth-child(14) {
+        //     width: 160px; // calc(100%/20*3);
+        // }
+        // // prensa
+        // th:nth-child(15),
+        // td:nth-child(15) {
+        //     width: 160px; // calc(100%/20*3);
+        // }
+        // // plegadora
+        // th:nth-child(16),
+        // td:nth-child(16) {
+        //     width: 160px; // calc(100%/20*3);
+        // }
+        // // soldadura
+        // th:nth-child(17),
+        // td:nth-child(17) {
+        //     width: 160px; // calc(100%/20*3);
+        // }
+        // // otros
+        // th:nth-child(18),
+        // td:nth-child(18) {
+        //     width: 160px; // calc(100%/20*3);
+        // }
+        // // externos
+        // th:nth-child(19),
+        // td:nth-child(19) {
+        //     width: 160px; // calc(100%/20*3);
+        // }
+    }
+}

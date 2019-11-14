@@ -1,0 +1,52 @@
+<h2>Operarios</h2>
+
+<form name="dashboardFrm" #dashboardFrm="ngForm" (ngSubmit)="rescataDatos()">
+    <div class="form-row">
+        <div class="input-group mb-3 col">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Buscar</span>
+            </div>
+            <input class="form-control" type="text" name="nombre" [(ngModel)]="nombre" placeholder="algo a buscar en el nombre..." aria-describedby="basic-addon1">
+        </div>
+
+        <div class="col">
+            <button type="submit" class="btn btn-outline-primary mb-2">Buscar</button>
+        </div>
+    </div>
+</form>
+
+<table class="table table-striped table-hover table-sm table-responsive-sm table-bordered" style="height: 760px;">
+    <thead translate="no">
+        <tr>
+            <th scope="col">Código</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Especialidad</th>
+            <th scope="col">Habilidades</th>
+            <th scope="col">Cursos</th>
+            <th scope="col">Ingreso</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody *ngIf=" lista.length > 0 ">
+        <tr *ngFor="let data of lista">
+            <td scope="row">{{ data.operario }}</td>
+            <td>{{ data.nombre }}</td>
+            <td>{{ data.especialidad }}</td>
+            <td>{{ data.habilidades }}</td>
+            <td>{{ data.cursor }}</td>
+            <td>{{ data.ingreso | date:"dd-MM-yyyy" }}</td>
+            <td>
+                <input class="btn btn-light" type="button" value="Editar">
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+    </tbody>
+</table>

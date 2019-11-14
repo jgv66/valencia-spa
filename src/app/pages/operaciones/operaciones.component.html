@@ -1,0 +1,40 @@
+<h2>Operaciones</h2>
+
+<form name="dashboardFrm" #dashboardFrm="ngForm" (ngSubmit)="rescataDatos()">
+    <div class="form-row">
+        <div class="input-group mb-3 col">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Buscar</span>
+            </div>
+            <input class="form-control" type="text" name="nombre" [(ngModel)]="nombre" placeholder="Algo a buscar en al descripción..." aria-describedby="basic-addon1">
+        </div>
+
+        <div class="col">
+            <button type="submit" class="btn btn-outline-primary mb-2">Buscar</button>
+        </div>
+    </div>
+</form>
+
+<table class="table table-striped table-hover table-sm table-responsive-sm table-bordered" style="height: 760px;">
+    <thead translate="no">
+        <tr>
+            <th scope="col">Código</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Edición</th>
+        </tr>
+    </thead>
+    <tbody *ngIf=" lista.length > 0 ">
+        <tr *ngFor="let data of lista">
+            <td scope="row">{{ data.codigo }}</td>
+            <td>{{ data.descripcion }}</td>
+            <td>
+                <input class="btn btn-light" type="button" value="Editar" (click)="openModalWithComponent( data )">
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+    </tbody>
+</table>

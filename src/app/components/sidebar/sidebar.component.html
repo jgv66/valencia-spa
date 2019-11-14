@@ -1,0 +1,14 @@
+<aside class="list-group list-group-flush w-100">
+    <div class="list-group-item">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Menú</h5>
+        </div>
+        <small class="text-muted">Opciones del sistema</small>
+    </div>
+    <a [routerLink]="['/main/dashboard']" routerLinkActive="active text-white font-weight-bold bg-dark" class="list-group-item list-group-item-action pl-4">Ordenes de Trabajo</a>
+    <a [routerLink]="['/main/operarios']" routerLinkActive="active text-white font-weight-bold bg-dark" class="list-group-item list-group-item-action pl-4">Operarios</a>
+    <a [routerLink]="['/main/usuarios']" routerLinkActive="active text-white font-weight-bold bg-dark" class="list-group-item list-group-item-action pl-4">Usuarios</a>
+    <a [routerLink]="['/main/operaciones']" routerLinkActive="active text-white font-weight-bold bg-dark" class="list-group-item list-group-item-action pl-4">Operaciones</a>
+    <!-- <a [routerLink]="['/main/settings']" routerLinkActive="active text-white font-weight-bold" class="list-group-item list-group-item-action mt-auto pl-4">Configuración</a> -->
+    <a [routerLink]="['/logout']" class="list-group-item list-group-item-action font-weight-bold text-right">Salir</a>
+</aside>

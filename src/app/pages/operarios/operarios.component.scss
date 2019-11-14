@@ -1,0 +1,56 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    table {
+        table-layout: auto;
+        height: 80%;
+        width: auto;
+        overflow-x: scroll;
+        thead tr {
+            display: block;
+            width: 100%;
+        }
+        tbody {
+            display: block;
+            overflow: auto;
+            height: 90%;
+            width: 100%;
+        }
+        // NV
+        th:nth-child(1),
+        td:nth-child(1) {
+            width: 110px; // calc(100%/20);
+        }
+        // Fecha
+        th:nth-child(2),
+        td:nth-child(2) {
+            width: 400px; // calc(100%/20*2);
+        }
+        // Cliente
+        th:nth-child(3),
+        td:nth-child(3) {
+            width: 250px; // calc(100%/20*6);
+        }
+        // Codigo
+        th:nth-child(4),
+        td:nth-child(4) {
+            width: 200px; // calc(100%/20*3);
+        }
+        // Cantidad
+        th:nth-child(5),
+        td:nth-child(5) {
+            width: 220px; // calc(100%/20);
+        }
+        // Cantidad
+        th:nth-child(6),
+        td:nth-child(6) {
+            width: 90px; // calc(100%/20);
+        }
+        // boton 
+        th:nth-child(7),
+        td:nth-child(7) {
+            width: 90px; // calc(100%/20);
+        }
+    }
+}

@@ -1,0 +1,42 @@
+<h2>Pérfil de usuario</h2>
+<form>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="name">Nombres</label>
+          <input type="text" class="form-control" name="name" id="name" placeholder="nombre completo"
+          [(ngModel)]="name">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="surname">Apellidos</label>
+          <input type="text" class="form-control" name="surname" id="surname" placeholder="apellidos"
+          [(ngModel)]="surname">
+        </div>
+      </div>
+  <div class="form-group">
+    <label for="email">Correo electrónico</label>
+    <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="correo@electrónico"
+    [(ngModel)]="email">
+    <small id="emailHelp" class="form-text text-muted">El correo ingresado corresponde también al usuario para ingresar al sistema.</small>
+  </div>
+  <div class="w-100 text-right">
+    <button type="button" class="btn btn-primary col-4" (click)="updateProfile()">Actualizar datos</button>
+  </div>
+  <div class="form-row border-top mt-3 pt-3">
+      <div class="form-group col-md-4">
+        <label for="password">Clave</label>
+        <input type="password" class="form-control" name="password" id="password" placeholder="ingrese su nueva clave"
+        [(ngModel)]="password">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputPassword4">Verifique su clave</label>
+        <input type="password" class="form-control" name="verifyPwd" id="verifyPwd" placeholder="repita su nueva clave"
+        [(ngModel)]="verifyPwd">
+      </div>
+
+      <div class="form-group col-md-4 d-flex">
+          <button type="button" class="btn btn-block btn-outline-primary align-self-end" (click)="updatePassword()">Cambiar contraseña</button>
+        </div>
+    </div>
+
+</form>

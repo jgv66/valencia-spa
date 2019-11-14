@@ -1,0 +1,114 @@
+<h2>Ordenes de Trabajo</h2>
+
+<form name="dashboardFrm" #dashboardFrm="ngForm" (ngSubmit)="rescataDatos()">
+    <div class="form-row">
+        <!-- <div class="col">
+            <select class="form-control" style="width: 420px;" name="local" [(ngModel)]="local" (change)="cambiandoLocal()">
+              <option value="">Seleccione un local</option>
+              <option *ngFor="let loc of locales" [value]="loc.codigo">{{ loc.nombre }}</option>
+            </select>
+        </div> -->
+        <div class="input-group mb-3 col">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Desde</span>
+            </div>
+            <input class="form-control" type="date" name="fechaIni" [(ngModel)]="fechaIni" placeholder="Fecha inicial" style="width: 200px; max-width: 200px;" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3 col">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Hasta</span>
+            </div>
+            <input class="form-control" type="date" name="fechaFin" [(ngModel)]="fechaFin" placeholder="Fecha inicial" style="width: 200px; max-width: 200px;" aria-describedby="basic-addon1">
+        </div>
+
+        <div class="input-group mb-3 col">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                    Solo NV pendientes
+                </label>
+            </div>
+        </div>
+
+        <div class="col">
+            <button type="submit" class="btn btn-outline-primary mb-2">Rescatar datos</button>
+        </div>
+    </div>
+</form>
+
+<div class="scrollme">
+    <table class="table table-striped table-hover table-sm table-responsive table-bordered" style="height: 760px;">
+        <thead translate="no">
+            <tr>
+                <th scope="col">NV</th>
+                <th scope="col">Emisión</th>
+                <th scope="col">Cliente</th>
+                <th scope="col">Código</th>
+                <th scope="col">Solicitado</th>
+                <th scope="col">Producido</th>
+                <th scope="col">Unid. Med.</th>
+                <th scope="col">Largo Ancho</th>
+                <th scope="col">Espe sor</th>
+                <th scope="col">Kilos_Unit. Kilos_Total</th>
+                <th scope="col">Plancha/ Despunte</th>
+                <th scope="col">Matriceria</th>
+                <th scope="col">Guillotina</th>
+                <!-- <th scope="col">Plasma</th>
+            <th scope="col">Prensa</th>
+            <th scope="col">Plegadora</th>
+            <th scope="col">Soldadura</th>
+            <th scope="col">Otros</th>
+            <th scope="col">Pr.Externos</th> -->
+                <th scope="col"> </th>
+            </tr>
+        </thead>
+        <tbody *ngIf=" lista.length > 0 ">
+            <tr *ngFor="let data of lista">
+                <td scope="row">{{ data.numero }}</td>
+                <td>{{ data.emision | date:"dd-MM-yyyy" }}</td>
+                <td>{{ data.razonsocial }}</td>
+                <td>{{ data.codigo }}</td>
+                <td>{{ data.q_solicitada | number:"1.0-3" }}</td>
+                <td>{{ data.q_producida | number:"0.0-3" }}</td>
+                <td>{{ data.unidad_medida }}</td>
+                <td>{{ data.largo | number:"0.0-2" }} <br> {{ data.ancho | number:"0.0-2" }}</td>
+                <td>{{ data.espesor | number:"0.0-2" }}</td>
+                <td>{{ data.kilos_unit | number:"0.0-3" }} <br> {{ data.kilos_total | number:"0.0-3" }}</td>
+                <td>{{ data.plancha_o_despunte === 'D' ? 'Despunte' : data.plancha_o_despunte === 'P' ? 'Plancha' : '' }}</td>
+                <td>{{ data.matriceria }}</td>
+                <td>{{ data.guillotina }}</td>
+                <!-- <td>{{ data.plasma }}</td>
+                <td>{{ data.prensa }}</td>
+                <td>{{ data.plegadora }}</td>
+                <td>{{ data.soldadura }}</td>
+                <td>{{ data.otros }}</td>
+                <td>{{ data.externos }}</td> -->
+                <td>
+                    <button type="button" class="btn btn-light" (click)="openModalWithComponent( data )">Editar</button>
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <!-- <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td> -->
+                <td>&nbsp;</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
